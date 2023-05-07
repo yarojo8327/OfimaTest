@@ -1,0 +1,189 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #e9f0ef !important;
+    color: white !important;
+}
+
+.content-body {
+    margin-top: 50px;
+    width: 50%;
+    color: #002333;
+    background-color: #FFFFFF;
+    border: 1px solid;
+    box-shadow: 5px 5px 5px 5px  #110F26;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.subtitle {
+    align-items: center;
+    text-align: center;
+    margin-top: 20px !important;
+    margin-bottom: 20px;
+}
+
+.title, .info-game {
+    width: 100%;
+    background: #159A9C;
+    color: #110F26;
+    padding: 20px;
+    text-align: center;
+}
+
+.info-game {
+    background-color: transparent;
+    color: #159A9C;
+    font-size: 24px;
+}
+
+.choices {
+    margin: 10px;
+    display: flex;
+    /* or inline-flex */
+    flex-direction: row;
+    justify-content: center;
+    min-height: 100px;
+}
+
+.choice img {
+    width: 100px !important;
+    height: 100%;
+    background-color: rgb(129, 127, 127);
+    padding: 15px;
+    border: 4px solid #333333;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.choice img:hover {
+    cursor: pointer;
+    background-color: #DEEFE7;
+}
+
+.choice img:active {
+    background-color: #159A9C;
+}
+
+.game-container {
+    background-color: #f4f7fa;
+    border: 1px solid #110F26;
+    border-radius: 10px;
+    margin: 0px;
+}
+
+.title {
+    border: 1px solid #110F26;
+    box-shadow: 5px 5px 5px black;
+    background-color: #FFFFFF !important;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 10px;
+
+    color: #159A9C;
+    padding: 20px;
+    text-align: center;
+    align-content: center;
+}
+
+.round-info {
+    font-size: xx-large;
+    font-weight: bold;
+    border: 1px solid #002333;
+    background-color: #159A9C;
+    margin: 5px;
+    height: 65px !important;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    padding: 10px;
+
+}
+
+.score {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px !important;
+}
+
+.score-player {
+    box-shadow: 5px 5px 5px black;
+    background-color: #159A9C;
+    font-size: 20px;
+    width: 250px !important;
+    margin-bottom: 10px;
+    margin-top: 10px !important;
+    margin-right: 10px;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    padding: 10px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    height: 40px;
+}
+
+.score-value {
+    background-color: #eaeef3;
+    box-shadow: 5px 5px black;
+    font-size: 50px;
+    border: 2px solid;
+    color: #333333;
+    height: 100px;
+    width: 200px !important;
+    font-weight: bold;
+}
+
+.player-one {
+    padding-left: 90px;
+    font-size: 20px !important;
+    font-weight: bold;
+    color: #159A9C;
+}
+
+.result {
+    margin-top: 20px !important;
+}
+
+.table-result {
+    margin-left: 7px;
+    border: 2px solid #002333;
+    height: 93%;
+    background-color: #f4f7fa;
+}
+
+th {
+    text-align: center !important;
+}
+
+td {
+    text-align: center !important;
+}
+
+.btn-submit{
+    margin: 15px;
+    text-align: center;
+    justify-content: center;
+}
+
+button {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+.btn-primary{
+    background-color: #159A9C !important;
+    border-color: #159A9C;
+}
+
+.alert{
+    margin-left: 20px;
+    color: red;
+}

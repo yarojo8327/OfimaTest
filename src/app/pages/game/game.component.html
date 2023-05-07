@@ -1,0 +1,94 @@
+<div class="container-fluid">
+    <div class="title">
+        <h1>¡¡Piedra, Papel ó Tijera!!</h1>
+    </div>
+    <div class="row g-0">
+        <div class="col-sm-6 col-md-9 game-container">
+            <div class="row score">
+                <div class="col-md-12 col-sm-12">
+                </div>
+                <div class="col-sm-3 d-flex align-items-center justify-content-center score-player">
+                    <span>{{playerOne.names}}</span>
+                </div>
+                <div class="col-sm-3 col-sm-1 d-flex align-items-center justify-content-center score-value">
+                    <span> {{scorePlayerOne}} - {{scorePlayerTwo}} </span>
+                </div>
+                <div class="col-sm-3 col-sm-1 d-flex align-items-center justify-content-center score-player">
+                    <span>{{playerTwo.names}}</span>
+                </div>
+            </div>
+            <p class="info-game"> Ronda: <strong>{{roundNumber}}</strong></p>
+            <div *ngIf="!finishGame" class="row">
+                <div class="col-md-6 move">
+                    <label class="player-one">Jugador 1</label>
+                    <div class="choices">
+                        <div class="choice" (click)="disabledPlayerTwo ? setMovePlayer(playerOne.id, 1) : null">
+                            <img src="/assets/images/rock.png"
+                                [ngStyle]="{'backgroundColor': disabledPlayerTwo ? '#ffffff' : '#d2d6d3' }" />
+                        </div>
+                        <div class="choice" (click)="disabledPlayerTwo ? setMovePlayer(playerOne.id, 2) : null">
+                            <img src="/assets/images/paper.png"
+                                [ngStyle]="{'backgroundColor': disabledPlayerTwo ? '#ffffff' : '#d2d6d3' }" />
+                        </div>
+                        <div class="choice" (click)="disabledPlayerTwo ? setMovePlayer(playerOne.id, 3) : null">
+                            <img src="/assets/images/scissors.png"
+                                [ngStyle]="{'backgroundColor': disabledPlayerTwo ? '#ffffff' : '#d2d6d3' }" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 move">
+                    <label class="player-one">Jugador 2</label>
+                    <div class="choices">
+                        <div class="choice" (click)="!disabledPlayerTwo ? setMovePlayer(playerOne.id, 1) : null">
+                            <img src="../assets/images/rock.png"
+                                [ngStyle]="{'backgroundColor': !disabledPlayerTwo ? '#ffffff' : '#d2d6d3' }" />
+                        </div>
+                        <div class="choice" (click)="!disabledPlayerTwo ? setMovePlayer(playerOne.id, 2) : null">
+                            <img src="../assets/images/paper.png"
+                                [ngStyle]="{'backgroundColor': !disabledPlayerTwo ? '#ffffff' : '#d2d6d3' }" />
+                        </div>
+                        <div class="choice" (click)="!disabledPlayerTwo ? setMovePlayer(playerOne.id, 3) : null">
+                            <img src="../assets/images/scissors.png"
+                                [ngStyle]="{'backgroundColor': !disabledPlayerTwo ? '#ffffff' : '#d2d6d3' }" />
+                        </div>
+                    </div>
+                </div>
+
+                <p *ngIf="!completedRond" class="info-game">{{disabledPlayerTwo?'Turno de ' + playerOne.names: 'Turno de
+                    ' + playerTwo.names}}</p>
+                <p *ngIf="completedRond" class="info-game">{{winnerMessage}}</p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3 result">
+            <div class="row" style="text-align: center; width: 100%;">
+                <h5 style="color: black;">Resultados de la partida</h5>
+            </div>
+            <div class="table-responsive table-result">
+                <table class="table table-bordered table-sm align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">{{playerOne.names}}</th>
+                            <th scope="col">{{playerTwo.names}}</th>
+                            <th scope="col">Ganador</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="rounds">
+                        <tr *ngFor="let item of rounds">
+                            <td>{{item.playerOne}}</td>
+                            <td>{{item.playerTwo}}</td>
+                            <td>{{item.winner}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br>
+        <br>
+        <div class="row" style="margin-bottom: 80px;">
+            <button type="button" class="btn btn-primary" style="width: 200px;" (click)="resetGame()">Repetir el juego</button>
+            <button type="button" class="btn btn-warning" style="width: 200px;" (click)="newGame()">Nuevo juego</button>
+        </div>
+    </div>
+</div>

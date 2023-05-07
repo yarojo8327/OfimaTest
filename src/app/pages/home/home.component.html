@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="title">
+        <h1>¡¡Piedra, Papel ó Tijera!!</h1>
+    </div>
+    <div class="content-body">
+        <div class="row col-md-12 subtitle">
+            <h4>Registro de Jugadores</h4>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="row col-md-12">
+                <div class="mb-3">
+                    <label for="playerOne" class="form-label">Jugador 1</label>
+                    <input type="text" class="form-control" id="playerOne" formControlName="playerOne"
+                        placeholder="Ingrese el nombre y apellido del jugador">
+                </div>
+                <div *ngIf="form.controls['playerOne'].invalid && (form.controls['playerOne'].dirty || form.controls['playerOne'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="form.controls['playerOne'].errors?.['required']">
+                        El nombre de jugador 1 es requerido !!
+                    </div>
+                    <div *ngIf="form.controls['playerOne'].errors">
+                        El nombre de jugador 1 debe contener mas de 5 caracteres
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="playerTwo" class="form-label">Jugador 2</label>
+                    <input type="text" class="form-control" id="playerTwo" formControlName="playerTwo"
+                        placeholder="Ingrese el nombre y apellido del jugador">
+                </div>
+                <div *ngIf="form.controls['playerTwo'].invalid && (form.controls['playerTwo'].dirty || form.controls['playerTwo'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="form.controls['playerTwo'].errors?.['required']">
+                    El nombre de jugador 2 es requerido !!
+                </div>
+                <div *ngIf="form.controls['playerTwo'].errors">
+                    El nombre de jugador 2 debe contener mas de 5 caracteres
+                </div>
+            </div>
+            </div>
+            <div class="col-12 d-flex btn-submit">
+                <button type="submit" [disabled]="form.pristine || form.invalid" class="btn btn-primary">Jugar ahora !!</button>
+            </div>
+        </form>
+    </div>
+</div>
